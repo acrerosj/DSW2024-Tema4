@@ -26,6 +26,8 @@
     </p>
   </form>
 <?php
+    } else {
+      echo "Producto no encontrado";
     }
   }
 ?>

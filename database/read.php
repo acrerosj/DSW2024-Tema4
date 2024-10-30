@@ -37,7 +37,7 @@
     printf('<td>%s</td>', $product->name);
     printf('<td>%.2f</td>', $product->price);
     printf('<td><a href="delete.php?id=%d">eliminar</a></td>', $product->id);
-    printf('<td><a href="edit.php?id=%d&name=%s&price=%.2f">editar</a></td>', $product->id, $product->name, $product->price);
+    printf('<td><a href="edit.php?id=%d">Editar</a></td>', $product->id);
     echo "</tr>";
   }
 ?>

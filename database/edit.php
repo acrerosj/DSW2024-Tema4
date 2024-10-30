@@ -9,20 +9,24 @@
 <body>
   <h1>Crear producto</h1>
 <?php
-  if (!empty($_GET['id']) && !empty($_GET['name']) && !empty($_GET['price']) ) {
+  if (!empty($_GET['id'])) {
+    $results = $link->query('SELECT * FROM products WHERE id = ' . $_GET['id']);
+    $product = $results->fetch_object();
+    if ($product) {
 ?>
   <form action="update.php?id=<?=$_GET['id']?>" method="post">
     <p>
-      <input type="text" name="name" id="" value="<?=$_GET['name'] ?>" maxlength="30">      
+      <input type="text" name="name" id="" value="<?=$product->name ?>" maxlength="30">      
     </p>
     <p>
-      <input type="number" name="price" id="" step="0.01" value="<?=$_GET['price'] ?>">
+      <input type="number" name="price" id="" step="0.01" value="<?=$product->price ?>">
     </p>
     <p>
       <button type="submit">Modificar</button>
     </p>
   </form>
 <?php
+    }
   }
 ?>
 <p>
